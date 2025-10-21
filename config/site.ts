@@ -1,7 +1,7 @@
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-  name: "Wanna Dance",
+  name: "DuDu FitDance",
   description: "舞蹈收集列表",
   navItems: [
     {
@@ -15,6 +15,6 @@ export const siteConfig = {
   ],
 
   links: {
-    github: "https://github.com/ClownpieceStripedAbyss/aya-dance-web",
+    github: "https://github.com/DuDuSchool/dudu-dance-web",
   },
 }

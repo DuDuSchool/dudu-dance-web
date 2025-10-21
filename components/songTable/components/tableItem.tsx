@@ -36,11 +36,11 @@ export default function TableItem({
   isEdit,
   handleDelete,
 }: SongTableProps) {
-  var url = `https://api.udon.dance/Api/Songs/play?id=${song.id}`
+  var url = `https://api.dudufit.dance/api/v1/videos/${song.id}`
   const videoThumbnailUrl = (video: GenericVideo): string => {
     if (!video) return ""
 
-    return `https://aya.kiva.moe/images/small${video.id}.jpg`
+    return `https://api.dudufit.dance/thumbnails/${video.id}.jpg?width=480&height=360`
   }
   // 获取收藏
   const collection = useSelector(selectCollection)

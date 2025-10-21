@@ -57,7 +57,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({}) => {
   const hasSM = queue?.video.shaderMotion.length > 0 ?? false;
 
   // IMPORTANT: use `http`, so our self-hosted CDN can serve the video locally! DONT USE `https`!
-  const videoUrl = queue ? `http://api.udon.dance/Api/Songs/play?id=${queue.video.id}` : "";
+  const videoUrl = queue ? `https://api.dudufit.dance/api/v1/videos/${queue.video.id}` : "";
   const flip = queue?.video.flip ?? false;
   const doubleWidth = queue?.video.doubleWidth ?? false;
   const volume = queue?.video.volume ?? 0.514;

@@ -1,4 +1,4 @@
-import { fetchWannaSongs, WannaData } from "@/types/video"
+import { fetchVideoIndex, VideoIndexResponse } from "@/types/video";
 
 // Cloudflare needs it, see: https://nextjs.org/docs/app/building-your-application/rendering/edge-and-nodejs-runtimes
 export const runtime = "nodejs"
@@ -8,7 +8,7 @@ export const dynamicParams = false
 export const revalidate = 60
 
 export async function GET() {
-  const data: WannaData[] = await fetchWannaSongs()
+  const data: VideoIndexResponse = await fetchVideoIndex()
 
   return new Response(JSON.stringify(data), {
     status: 200,

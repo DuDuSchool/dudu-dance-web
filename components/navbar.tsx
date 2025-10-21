@@ -1,17 +1,12 @@
-import {
-  Navbar as NextUINavbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
-} from "@nextui-org/navbar"
-import { Link } from "@nextui-org/link"
-import { link as linkStyles } from "@nextui-org/theme"
-import NextLink from "next/link"
-import clsx from "clsx"
+import { Navbar as NextUINavbar, NavbarBrand, NavbarContent, NavbarItem } from "@nextui-org/navbar";
+import { Link } from "@nextui-org/link";
+import { link as linkStyles } from "@nextui-org/theme";
+import NextLink from "next/link";
+import clsx from "clsx";
 
-import { siteConfig } from "@/config/site"
-import { ThemeSwitch } from "@/components/theme-switch"
-import { GithubIcon, Logo } from "@/assets/icon"
+import { siteConfig } from "@/config/site";
+import { ThemeSwitch } from "@/components/theme-switch";
+import { GithubIcon, Logo } from "@/assets/icon";
 
 export const Navbar = () => {
   return (
@@ -20,7 +15,7 @@ export const Navbar = () => {
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
             <Logo />
-            <p className="font-bold text-inherit">Wanna Dance</p>
+            <p className="font-bold text-inherit">DuDu FitDance</p>
           </NextLink>
         </NavbarBrand>
         <ul className="hidden lg:flex gap-4 justify-start ml-2">

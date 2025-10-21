@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { createSelector } from "reselect";
 import { RootState } from "../index";
-import { GenericVideo, GenericVideoGroup, GROUP_ALL_SONGS, SortBy, WannaData } from "@/types/video";
+import { GenericVideo, GenericVideoGroup, GROUP_ALL_SONGS, SortBy, VideoIndexResponse } from "@/types/video";
 // local storage key
 const SONG_INFO_KEY = "songInfo"
 // local storage format version, bump this if the type `SongInfo` changes
@@ -82,8 +82,8 @@ const handleFetchWannaMultidata = (builder: any) => {
     })
     .addCase(
       fetchWannaInfoMultidataAction.fulfilled,
-      (state: SongInfo, action: PayloadAction<WannaData["data"]>) => {
-        console.log("wanna fulfilled")
+      (state: SongInfo, action: PayloadAction<VideoIndexResponse["data"]>) => {
+        console.log("wanna fulfilled", action.payload)
         const { groups, time } = action.payload
         if (time === state.updatedAt) {
           state.loading = false
