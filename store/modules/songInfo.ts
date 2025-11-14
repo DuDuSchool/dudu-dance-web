@@ -5,7 +5,7 @@ import { GenericVideo, GenericVideoGroup, GROUP_ALL_SONGS, SortBy, VideoIndexRes
 // local storage key
 const SONG_INFO_KEY = "songInfo"
 // local storage format version, bump this if the type `SongInfo` changes
-const SONG_INFO_VERSION = 13
+const SONG_INFO_VERSION = 15
 
 export interface SongInfo {
   loading: boolean
@@ -19,7 +19,7 @@ const initialState: SongInfo = {
   loading: true,
   updatedAt: "-1",
   songTypes: [],
-  sortBy: SortBy.ID_ASC,
+  sortBy: SortBy.NATURAL_ORDER,
   version: SONG_INFO_VERSION,
 }
 
@@ -114,7 +114,7 @@ const handleFetchWannaMultidata = (builder: any) => {
 const initSongInfo = (genericGroups: GenericVideoGroup[], time: string) => {
   const newState: SongInfo = {
     updatedAt: time,
-    sortBy: SortBy.ID_ASC,
+    sortBy: SortBy.NATURAL_ORDER,
     songTypes: genericGroups,
     loading: false,
     version: SONG_INFO_VERSION,

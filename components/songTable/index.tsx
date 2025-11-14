@@ -1,26 +1,16 @@
-"use client"
+"use client";
 
-import { Key, useMemo, useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import {
-  Autocomplete,
-  AutocompleteItem,
-  Button,
-  Checkbox,
-  Pagination,
-  ScrollShadow,
-} from "@nextui-org/react"
+import { Key, useMemo, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Autocomplete, AutocompleteItem, Button, Checkbox, Pagination, ScrollShadow } from "@nextui-org/react";
 
-import TableItem from "./components/tableItem"
-import styles from "./index.module.css"
+import TableItem from "./components/tableItem";
+import styles from "./index.module.css";
 
-import { selectSongInfo, setSortBy } from "@/store/modules/songInfo"
-import { GenericVideo, SortBy } from "@/types/video"
-import {
-  selectPlayOptions,
-  setLockedRandomGroup,
-} from "@/store/modules/playOptions"
-import { Check, Edit } from "@/assets/icon"
+import { selectSongInfo, setSortBy } from "@/store/modules/songInfo";
+import { GenericVideo, SortBy } from "@/types/video";
+import { selectPlayOptions, setLockedRandomGroup } from "@/store/modules/playOptions";
+import { Check, Edit } from "@/assets/icon";
 
 interface SongTableProps {
   genericVideos: GenericVideo[]
@@ -71,6 +61,7 @@ export default function SongTable({
 
   // sort
   const sortOptions = [
+    { value: `${SortBy.NATURAL_ORDER}`, label: "发布顺序" },
     { value: `${SortBy.ID_ASC}`, label: "ID 升序" },
     { value: `${SortBy.ID_DESC}`, label: "ID 降序" },
     { value: `${SortBy.TITLE_ASC}`, label: "标题升序" },

@@ -31,6 +31,9 @@ const videoSort = (videos: GenericVideo[], sortBy: SortBy): GenericVideo[] => {
         return a.composedTitle.localeCompare(b.composedTitle);
       case SortBy.TITLE_DESC:
         return b.composedTitle.localeCompare(a.composedTitle);
+      case SortBy.NATURAL_ORDER:
+        if (b.originalPublishedAt && a.originalPublishedAt) return b.originalPublishedAt - a.originalPublishedAt;
+        return b.id - a.id;
       default:
         return 0; // should never happen
     }

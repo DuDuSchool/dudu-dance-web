@@ -38,6 +38,7 @@ export interface GenericVideo {
   rpe: number;
   disablePublic: boolean;
   skipRandom: boolean;
+  originalPublishedAt: number | null;
 }
 
 export interface VideoIndexResponse {
@@ -204,6 +205,7 @@ export async function fetchVideoIndex(): Promise<VideoIndexResponse> {
     hflip: boolean,
     start: number,
     end: number,
+    original_published_at: number,
   }
 
   interface DuDuGroup {
@@ -240,6 +242,7 @@ export async function fetchVideoIndex(): Promise<VideoIndexResponse> {
             rpe: 0,
             disablePublic: false,
             skipRandom: false,
+            originalPublishedAt: video.original_published_at,
           } as GenericVideo));
           return {
             title: group.name,
